@@ -12,4 +12,7 @@ public class Business1 {
 	public String calculateSomething() {
 		return dao1.retrieveSomething();
 	}
+	public void testAfterThrowing(int param) {
+		System.out.println(1/param);
+	}
 }

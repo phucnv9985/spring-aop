@@ -25,6 +25,7 @@ public class SpringAopApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		logger.info(business1.calculateSomething());
 		logger.info(business2.calculateSomething());
+		business1.testAfterThrowing(0);
 	}
 
 }
