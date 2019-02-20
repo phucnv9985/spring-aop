@@ -18,18 +18,18 @@ public class AfterAopAspect {
     private Logger logger = LoggerFactory.getLogger(AfterAopAspect.class);
 
     //execution(* PACKAGE.*.*(..))
-    @AfterReturning(pointcut="execution(* com.learn.spring.aop.springaop.business.*.*(..))", returning="result")
+    @AfterReturning(pointcut="com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()", returning="result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
-    	logger.info("{} returned with value {}", joinPoint, result);
+    	logger.info("Using businessLayerExecution: {} returned with value {}", joinPoint, result);
     }
     
-    @AfterThrowing(value="execution(* com.learn.spring.aop.springaop.business.*.*(..))", throwing="exception")
+    @AfterThrowing(value="com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()", throwing="exception")
     public void afterThrowing(JoinPoint joinPoint, Exception exception) {
-    	logger.info("{} throws exception {}", joinPoint, exception);
+    	logger.info("Using businessLayerExecution: {} throws exception {}", joinPoint, exception);
     }
     
-    @After("execution(* com.learn.spring.aop.springaop.business.*.*(..))")
+    @After("com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void after(JoinPoint joinPoint) {
-    	logger.info("after execution of {}", joinPoint);
+    	logger.info("Using businessLayerExecution: after execution of {}", joinPoint);
     }
 }

@@ -16,7 +16,7 @@ public class MethodExecutionCalculationAspect {
     private Logger logger = LoggerFactory.getLogger(MethodExecutionCalculationAspect.class);
 
     //execution(* PACKAGE.*.*(..))
-    @Around("execution(* com.learn.spring.aop.springaop..*.*(..))")
+    @Around("com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
     	// startTime = x
     	long startTime = System.currentTimeMillis();
@@ -24,7 +24,7 @@ public class MethodExecutionCalculationAspect {
     	Object ob = joinPoint.proceed();
     	// endTime = y
     	long timeTaken = System.currentTimeMillis() - startTime;
-    	logger.info("Time taken by {} is {}", joinPoint, timeTaken);
+    	logger.info("Using businessLayerExecution: Time taken by {} is {}", joinPoint, timeTaken);
     	return ob;
     }
 }

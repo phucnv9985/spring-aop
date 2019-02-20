@@ -6,4 +6,7 @@ public class CommonJoinPointConfig {
 
 	@Pointcut("execution(* com.learn.spring.aop.springaop.data.*.*(..))")
 	public void dataLayerExecution() {}
+	
+	@Pointcut("execution(* com.learn.spring.aop.springaop.business.*.*(..))")
+	public void businessLayerExecution() {}
 }
