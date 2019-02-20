@@ -16,9 +16,9 @@ public class BeforeAspect {
     private Logger logger = LoggerFactory.getLogger(BeforeAspect.class);
 
     //execution(* PACKAGE.*.*(..))
-    @Before("com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.allLayerExecution()")
+    @Before("com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecutionWithWithin()")
     public void before(JoinPoint joinPoint) {
-    	logger.info(" Intercepted method calls using allLayerExecution - {}", joinPoint);
+    	logger.info(" Intercepted method calls using dataLayerExecutionWithWithin - {}", joinPoint);
     }
 
     

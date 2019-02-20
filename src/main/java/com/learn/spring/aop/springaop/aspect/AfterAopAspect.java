@@ -28,8 +28,8 @@ public class AfterAopAspect {
     	logger.info("Using businessLayerExecution: {} throws exception {}", joinPoint, exception);
     }
     
-    @After("com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+    @After("com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.beanContainingDao()")
     public void after(JoinPoint joinPoint) {
-    	logger.info("Using businessLayerExecution: after execution of {}", joinPoint);
+    	logger.info("Using beanContainingDao: after execution of {}", joinPoint);
     }
 }
