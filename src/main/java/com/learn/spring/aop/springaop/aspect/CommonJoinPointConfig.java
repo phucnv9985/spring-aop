@@ -9,4 +9,11 @@ public class CommonJoinPointConfig {
 	
 	@Pointcut("execution(* com.learn.spring.aop.springaop.business.*.*(..))")
 	public void businessLayerExecution() {}
+	
+	
+	@Pointcut("com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution() || com.learn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+	public void allLayerExecution() {}
+	
+	@Pointcut("bean(*dao1*)")
+	public void beanContainingDao() {}
 }
